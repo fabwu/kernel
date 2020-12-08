@@ -3,7 +3,7 @@
 .. |u8| replace:: :c:type:`u8 <u8>`
 .. |u16| replace:: :c:type:`u16 <u16>`
 .. |ssam_cdev_request| replace:: :c:type:`struct ssam_cdev_request <ssam_cdev_request>`
-.. |ssam_request_flags| replace:: :c:type:`enum ssam_request_flags <ssam_request_flags>`
+.. |ssam_cdev_request_flags| replace:: :c:type:`enum ssam_cdev_request_flags <ssam_cdev_request_flags>`
 
 ==============================
 User-Space EC Interface (cdev)
@@ -64,7 +64,7 @@ actual size of the response, in bytes.
 Additionally, if the request has a response, this must be indicated via the
 request flags, as is done with in-kernel requests. Request flags can be set
 via the ``flags`` member and the values correspond to the values found in
-|ssam_request_flags|.
+|ssam_cdev_request_flags|.
 
 Finally, the status of the request itself is returned in the ``status``
 member (a negative errno value indicating failure). Note that failure
@@ -82,4 +82,3 @@ case the actual execution of the request failed after it has been submitted.
 A full definition of the argument struct is provided below:
 
 .. kernel-doc:: include/uapi/linux/surface_aggregator/cdev.h
-   :functions: ssam_cdev_request
